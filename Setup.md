@@ -1,6 +1,10 @@
 ## Repository Setup Instructions
 
+<<<<<<< HEAD
 The course's *source* repository (located at `https://github.com/Product-College-Courses/CS-1.2-How-Data-Structures-Work`) contains course materials including the schedule, class topics, tutorial milestones, challenges, starter code, unit tests, slides, and links to resources.
+=======
+The course's *source* repository (located at `https://github.com/Make-School-Courses/CS-2-Tweet-Generator`) contains course materials including the schedule, class topics, tutorial milestones, challenges, starter code, unit tests, slides, and links to resources.
+>>>>>>> d20c5d1045722991c7d902111181ea8781728f12
 It will be continuously updated throughout the course, so you will need to regularly *pull* from it to get new materials.
 (Note that you cannot *push* to the course's source repository.)
 However, you can *fork* it to create a copy and push code to your own fork.
@@ -20,7 +24,11 @@ Please follow these instructions *exactly* to correctly set up your fork of this
 `git push` (the `-u` in the previous command lets you omit `origin master`)
 
 1. Add this course's source repo as another *remote* to your local repo with:
+<<<<<<< HEAD
 `git remote add course https://github.com/Product-College-Courses/CS-1.2-How-Data-Structures-Work.git`
+=======
+`git remote add course https://github.com/Make-School-Courses/CS-2-Tweet-Generator.git`
+>>>>>>> d20c5d1045722991c7d902111181ea8781728f12
 
 1. When you want to access new course materials, first be sure you've committed and pushed your recent work (run `git status` to check) and then *pull* from the course's source repo with:
 `git pull course master`
