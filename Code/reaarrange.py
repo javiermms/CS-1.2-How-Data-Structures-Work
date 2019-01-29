@@ -1,19 +1,26 @@
 import random
+import sys
 
-def put_into_array():
-    array = list()
-    sentence = input("Enter a sentence: ")
-    words = sentence.split()
+sentence = input("Enter a sentence: ")
 
-    for word in words:
-        array.append(word)
+arr = list()
+words = sentence.split()
 
-    random.shuffle(array)
-    return array
+for word in words:
+    arr.append(word)
 
-array = put_into_array()
 
-print(array)
+def shuffle(arr):
+    shuffled_arr = []
+    while len(arr) != 0:
+        word = random.choice(arr)
+        arr.remove(word)
+        shuffled_arr.append(word)
+    return shuffled_arr
+
+print(shuffle(arr))
+
+
 
 
             
