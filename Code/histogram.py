@@ -9,7 +9,7 @@ with open('sample.txt') as f:
         frequency = 0
         
         for match in words_array:
-            if word == [match]:
+            if word == match:
                 frequency += 1
         return frequency
     
@@ -17,6 +17,9 @@ with open('sample.txt') as f:
         array.append([word])
     
     for i in range(0, len(array)):
-        array[i].append(frequency(array[i]))
+        for j in range(0, len(array[i])):
+            array[i].append(frequency(array[i][j]))
+
+
   
 print(array)
