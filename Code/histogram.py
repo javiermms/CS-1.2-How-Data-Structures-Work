@@ -1,17 +1,22 @@
-
 array = []
 
 with open('sample.txt') as f:
     text = f.read()
     words_array = text.split()
+    filter_words = set(words_array)
 
-    # Creates and fills array with text
-    for i in range(0, len(words_array)):
-        array.append([words_array[i]])
-                
-    #adds frequency numbers
-    for i in range(0, len(array)):
-        array[i].append(1)
+    def frequency(word):
+        frequency = 0
         
-
+        for match in words_array:
+            if word == [match]:
+                frequency += 1
+        return frequency
+    
+    for word in filter_words:
+        array.append([word])
+    
+    for i in range(0, len(array)):
+        array[i].append(frequency(array[i]))
+  
 print(array)
