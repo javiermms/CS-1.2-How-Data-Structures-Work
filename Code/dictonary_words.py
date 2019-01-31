@@ -1,6 +1,6 @@
 import random
-
-number = input("Enter a number: ")
+#sys.rv
+number = input()
 
 def sentence_generator(num):
     random_words = list()
@@ -9,10 +9,10 @@ def sentence_generator(num):
         text = f.read().splitlines() 
 
         while int(num) > len(random_words):
-            max = random.randint(0,len(text)-1)
-            randword = text[max]
+            random_number = random.randint(0,len(text)-1)
+            randword = text[random_number]
             random_words.append(randword)
-        # check for duplicates?
+        # check for duplicates? smaller the file you get duplicates
     
     return " ".join(random_words) + '.'
 
