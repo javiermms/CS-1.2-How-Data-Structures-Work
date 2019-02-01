@@ -3,7 +3,6 @@ with open('sample.txt') as f:
     text = f.read()
     words_array = text.split()
 
- 
     for word in words_array:
         try:
             dic[word] = dic[word] + 1

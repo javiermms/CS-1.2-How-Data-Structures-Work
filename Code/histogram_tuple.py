@@ -12,8 +12,9 @@ with open('sample.txt') as f:
                 frequency += 1
         return frequency
    
-    for i in range(0, len(words_array) - 1):
-        array.append(tupel + (words_array[i], frequency(words_array[i])))
-        
+
+    for word in words_array:
+        if word not in array:
+            array.append(tupel + (word, frequency(word)))
 
 print(array)
