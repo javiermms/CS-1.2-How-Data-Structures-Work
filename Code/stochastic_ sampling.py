@@ -22,6 +22,6 @@ with open('sample.txt') as f:
             array[i].append(frequency(array[i][j]))
 
     rand = random.randint(0, len(array)-1)
-    choice = array[rand]
+    choice = array[rand][0]
 
 print(choice)
