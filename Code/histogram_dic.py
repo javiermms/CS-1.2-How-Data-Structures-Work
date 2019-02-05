@@ -5,7 +5,7 @@ with open('sample.txt') as f:
 
     for word in words_array:
         try:
-            dic[word] = dic[word] + 1
+            dic[word] += 1
         except KeyError:
             dic[word] = 1
 

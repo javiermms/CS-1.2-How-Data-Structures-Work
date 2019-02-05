@@ -21,6 +21,12 @@ with open('sample.txt') as f:
         for j in range(0, len(array[i])):
             array[i].append(frequency(array[i][j]))
 
+    # for i in range(0, len(array)-1):
+    #     weight = array[i][1]
+    #     print(weight)
+
+        
+
     rand = random.randint(0, len(array)-1)
     choice = array[rand][0]
 
