@@ -1,33 +1,29 @@
+from histogram_lists import *
 import random
-array = []
 
-with open('sample.txt') as f:
-    text = f.read()
-    words_array = text.split()
-    filter_words = set(words_array)
+def probability(histogram):
+    total_freq = 0
+    cumulative_probability = 0
 
-    def frequency(word):
-        frequency = 0
-        
-        for match in words_array:
-            if word == match:
-                frequency += 1
-        return frequency
+    for element in histogram:
+        total_freq += element[1]
 
-    for word in filter_words:
-        array.append([word])
-    
-    for i in range(0, len(array)):
-        for j in range(0, len(array[i])):
-            array[i].append(frequency(array[i][j]))
+    random_num = random.uniform(0, 1)
+    for element in histogram:
+        cumulative_probability += element[1]/total_freq
+        if cumulative_probability >= random_num:
+            return element[0]
 
-    # for i in range(0, len(array)-1):
-    #     weight = array[i][1]
-    #     print(weight)
+def check_accuracy(histogram):
+    proof_dict = dict()
 
-        
+    for element in histogram:
+        proof_dict[element[0]] = 0
 
-    rand = random.randint(0, len(array)-1)
-    choice = array[rand][0]
+    for _ in range(0, 1000):
+        proof_dict[probability(histogram)] += 1
 
-print(choice)
+    print(proof_dict)
+
+print(probability(array))
+check_accuracy(array)

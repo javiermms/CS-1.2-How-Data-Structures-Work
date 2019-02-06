@@ -20,4 +20,13 @@ with open('sample.txt') as f:
         for j in range(0, len(array[i])):
             array[i].append(frequency(array[i][j]))
 
-print(array)
+    # for word in word-list:
+        # for inner_list in list:
+        #     if word == inner_list[0]
+        #         inner_list[1] += 1
+        # OR      found = True
+        #         break
+                #the outer for loop
+        #   if not found:
+            # list.append([word,1])
+
