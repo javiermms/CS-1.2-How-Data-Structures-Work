@@ -4,9 +4,9 @@ with open('sample.txt') as f:
     words_array = text.split()
 
     for word in words_array:
-        try:
-            dic[word] += 1
-        except KeyError:
+        if word not in dic:
             dic[word] = 1
+        else:
+            dic[word] += 1
 
 print(dic)
