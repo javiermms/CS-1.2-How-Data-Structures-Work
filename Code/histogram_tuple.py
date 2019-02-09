@@ -17,4 +17,4 @@ with open('sample.txt') as f:
         if not found:
             array.append((word, 1))
 
-print(array)
+print(array) 
