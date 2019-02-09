@@ -11,20 +11,23 @@ with open('sample.txt') as f:
     text = f.read()
     words_array = text.split()
     new_array = list()
-
+    
+    count = 0
     for word in words_array:
         found = False
         for element in array:
             if word == element:
-                duplicate_array.append(word)
-                # element[0] += 1
+                count += 1
                 found = True
                 break
+            
 
         if not found:
             array.append(word)
-    output.append((1,array))
-    output.append(duplicate_array)
+    output.append((1, array))
+    duplicate_array.append(word)
+    output.append((count, duplicate_array))
+    
     
 
 # print(array)
