@@ -12,7 +12,7 @@ with open('sample.txt') as f:
     words_array = text.split()
     new_array = list()
     
-    count = 0
+    count = 1
     for word in words_array:
         found = False
         for element in array:
@@ -20,13 +20,15 @@ with open('sample.txt') as f:
                 count += 1
                 found = True
                 break
-            
-
+        
         if not found:
             array.append(word)
+    if found:
+        duplicate_array.append(word)
+            
     output.append((1, array))
-    duplicate_array.append(word)
     output.append((count, duplicate_array))
+    
     
     
 
