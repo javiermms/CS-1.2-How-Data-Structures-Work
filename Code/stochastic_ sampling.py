@@ -25,8 +25,8 @@ def check_accuracy(histogram):
     # fills a dictionary with a word as a key and sets probability to 0 
     for element in histogram:
         proof_dict[element[0]] = 0
-    # stores a sample of 1000 function calls
-    for _ in range(0, 1000):
+    # stores each individual sample of 1000 function calls
+    for _ in range(0, 10000):
         proof_dict[probability(histogram)] += 1
 
     return(proof_dict)
