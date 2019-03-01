@@ -40,6 +40,14 @@ class HashTable(object):
         # TODO: Loop through all buckets
         # TODO: Collect all values in each bucket
 
+        cumulative_values = []
+
+        for bucket in self.buckets:
+            for key, value in bucket.items():
+                cumulative_values.append(value)
+            return cumulative_values
+             
+
     def items(self):
         """Return a list of all items (key-value pairs) in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
@@ -66,7 +74,7 @@ class HashTable(object):
         index = self._bucket_index(key)
         bucket = self.buckets[index]
         entry = bucket.find(lambda key_value: key_value[0] == key)
-        
+
         return (entry is not None)
 
     def get(self, key):
