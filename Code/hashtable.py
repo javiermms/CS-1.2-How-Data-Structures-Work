@@ -63,6 +63,12 @@ class HashTable(object):
         # TODO: Loop through all buckets
         # TODO: Count number of key-value entries in each bucket
 
+        length = 0
+
+        for bucket in self.buckets:
+            length += bucket.length() 
+        return length
+
     def contains(self, key):
         """Return True if this hash table contains the given key, or False.
         TODO: Running time: O(???) Why and under what conditions?"""
