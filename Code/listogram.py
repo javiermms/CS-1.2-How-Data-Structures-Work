@@ -20,16 +20,18 @@ class Listogram(list):
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
+        
         found = False
-        for count in self:
-            if count[0] == word:
-                added_count = count[1] + count
-                self.remove(count)
-                self.append((word, added_count))
+        counter = 0
+        for inner_tuple in self:
+            if word == inner_tuple[0]:
+                current_count = inner_tuple[1] + count
+                del self[counter]
+                self.insert(counter,(word, current_count))
                 self.tokens += count
                 found = True
                 break
-
+            counter += 1
         if not found:
             self.types += 1
             self.tokens += count
@@ -41,7 +43,7 @@ class Listogram(list):
 
         for count in self:
             if count[0] == word:
-                return count[0]
+                return count[1]
         return 0 
         
 
@@ -51,9 +53,9 @@ class Listogram(list):
         # TODO: Check if word is in this histogram
 
         for given_word in self:
-            if given_word == word:
+            if given_word[0] == word:
                 return True
-        return 0
+        return False
             
 
     def _index(self, target):
