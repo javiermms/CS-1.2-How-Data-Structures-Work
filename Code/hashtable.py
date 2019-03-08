@@ -27,8 +27,12 @@ class HashTable(object):
     def keys(self):
         """Return a list of all keys in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
+
+    
+        # O(n) because it has to go through the whole hashtable to get all keys
+        
         # Collect all keys in each bucket
-        all_keys = []
+        all_keys = [] 
         for bucket in self.buckets:
             for key, value in bucket.items():
                 all_keys.append(key)
@@ -39,6 +43,8 @@ class HashTable(object):
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all buckets
         # TODO: Collect all values in each bucket
+
+         # O(n) because it has to go through the whole hashtable to get all hashtable values
 
         cumulative_values = []
 
@@ -52,6 +58,9 @@ class HashTable(object):
         """Return a list of all items (key-value pairs) in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
         # Collect all pairs of key-value entries in each bucket
+
+        #O(n) because it has to go throught the whole hashtable 
+
         all_items = []
         for bucket in self.buckets:
             all_items.extend(bucket.items())
@@ -62,6 +71,8 @@ class HashTable(object):
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all buckets
         # TODO: Count number of key-value entries in each bucket
+
+        # O(n) because it goes through the whole hastable
 
         length = 0
 
@@ -77,6 +88,8 @@ class HashTable(object):
 
         # Check Out what was returned - is it None?
 
+        # O(n) because we call the find method
+
         index = self._bucket_index(key)
         bucket = self.buckets[index]
         entry = bucket.find(lambda key_value: key_value[0] == key)
@@ -91,6 +104,8 @@ class HashTable(object):
         # TODO: If found, return value associated with given key
         # TODO: Otherwise, raise error to tell user get failed
         # Hint: raise KeyError('Key not found: {}'.format(key))
+
+        # O(n) because we call the find method
 
         bucket = self.buckets[self._bucket_index(key)]
         entry = bucket.find(lambda key_value: key_value[0] == key)
@@ -125,7 +140,9 @@ class HashTable(object):
         # TODO: Otherwise, raise error to tell user delete failed
         # Hint: raise KeyError('Key not found: {}'.format(key))
 
-        # guided by Jermy's code In-class
+        # guided by Jeremy's code In-class
+
+        # O(n) because it loops through to delete item
 
         bucket = self.buckets[self._bucket_index(key)]
 
